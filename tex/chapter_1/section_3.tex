@@ -1,0 +1,304 @@
+\section{Свойства корня n-ой степени}
+
+\begin{theorem}
+    \[
+        \forall n \in \mathbb{N}: n \notdivisible 2 \;\;\; \forall a \in \mathbb{R} \;\;\; \sqrt[n]{a^n} = (\sqrt[n]{a})^n = a
+    \]
+\end{theorem}
+
+\begin{proof}
+    \begin{align*}
+        &\text{Пусть } \sqrt[n]{a^n} = x \text{, тогда}\\
+        &x^n = a^n \overset{n \notdivisible 2}{\iff} x = a \iff \sqrt[n]{a^n} = a \\
+        \\
+        &\text{Пусть } (\sqrt[n]{a})^n = y \text{, тогда}\\
+        &\sqrt[n]{y} = \sqrt[n]{a} \iff (\sqrt[n]{y})^n = a \iff \left(\sqrt[n]{(\sqrt[n]{a})^n}\right)^n = a \iff (\sqrt[n]{a})^n = a
+    \end{align*}
+\end{proof}
+
+\begin{theorem}
+    \begin{align*}
+        \forall n \in \mathbb{N}: n \divisible 2 \;\;\; &\forall a \ge 0 \; (\sqrt[n]{a})^n = a \\
+        &\forall a \in \mathbb{R} \; \sqrt[n]{a^n} = |a|
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    \begin{align*}
+        &\text{Пусть } \sqrt[n]{a^n} = x \text{, тогда}\\
+        &\left\{\begin{array}{l}
+            x^n = a^n \\
+            x \ge 0
+        \end{array}\right.
+        \overset{n \divisible 2}{\iff} x = |a| \iff 
+        \left[\begin{array}{l}
+                x = a \\
+                x = -a
+        \end{array}\right. \iff 
+        \left[\begin{array}{l}
+            \sqrt[n]{a^n} = a \\
+            \sqrt[n]{a^n} = -a
+        \end{array}\right. 
+        \iff \sqrt[n]{a^n} = |a|\\
+        \\
+        &\text{Пусть } (\sqrt[n]{a})^n = y \text{, тогда}\\
+        &\left\{\begin{array}{l}
+            \sqrt[n]{a} = \sqrt[n]{y} \\
+            \sqrt[n]{a} \ge 0
+        \end{array}\right. \iff
+        \left\{\begin{array}{l}
+            \left\{\begin{array}{l}
+                (\sqrt[n]{y})^n = a \\
+                \sqrt[n]{y} \ge 0
+            \end{array}\right. \\
+            \sqrt[n]{a} \ge 0
+        \end{array}\right. \underset{a \ge 0}{\iff}
+        \left(\sqrt[n]{(\sqrt[n]{a})^n}\right)^n = a \iff
+        (\sqrt[n]{a})^n = |a| \iff \\
+        &\iff (\sqrt[n]{a})^n = a
+    \end{align*}
+\end{proof}
+
+\begin{theorem}
+    \begin{align*}
+        \forall n \in \mathbb{N}: n \notdivisible 2 \;\;\; \forall a, b \in \mathbb{R}  \;\;\; \sqrt[n]{ab} = \sqrt[n]{a} \cdot \sqrt[n]{b}
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    \hfill
+    \begin{align*}
+        &\text{Пусть } x = \sqrt[n]{a} \land y = \sqrt[n]{b} \text{, тогда}\\
+        &\left\{\begin{array}{l}
+            x^n = a \\
+            y^n = b \\
+        \end{array}\right. \implies
+        \sqrt[n]{ab} = \sqrt[n]{(xy)^n} \iff
+        xy = \sqrt[n]{ab} = \sqrt[n]{a} \cdot \sqrt[n]{b}
+    \end{align*}
+\end{proof}
+
+\break
+
+\begin{theorem}
+    \begin{align*}
+        \forall n \in \mathbb{N}: n \divisible 2 \;\;\; \forall a, b \ge 0 \;\;\; \sqrt[n]{ab} = \sqrt[n]{a} \cdot \sqrt[n]{b}
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    \hfill
+    \begin{align*}
+        &\text{Пусть } x = \sqrt[n]{a} \land y = \sqrt[n]{b} \text{, тогда}\\
+        &\left\{\begin{array}{l}
+            x^n = a \\
+            x \ge 0 \\
+            y^n = b \\
+            y \ge 0
+        \end{array}\right. \underset{a, b \ge 0}{\implies}
+        \left\{\begin{array}{l}
+            x^n = a \\
+            y^n = b
+        \end{array}\right. \implies
+        \sqrt[n]{ab} = \sqrt[n]{(xy)^n} \underset{x, y \ge 0}{\iff}
+        xy = \sqrt[n]{ab} = \sqrt[n]{a} \cdot \sqrt[n]{b}
+    \end{align*}
+\end{proof}
+
+\begin{theorem}
+    \begin{align*}
+        \forall n \in \mathbb{N}: n \notdivisible 2 \;\;\; \forall a \in \mathbb{R} \;\;\; \forall b \in \mathbb{R} \backslash \{0\} \;\;\; \sqrt[n]{\frac{a}{b}} = \frac{\sqrt[n]{a}}{\sqrt[n]{b}}
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    \hfill
+    \begin{align*}
+        &\text{Пусть } x = \sqrt[n]{a} \land y = \sqrt[n]{b} \text{, тогда}\\
+        &\left(\frac{x}{y}\right)^n = \frac{x^n}{y^n} = \frac{a}{b} \iff \frac{x}{y} = \sqrt[n]{\frac{a}{b}} = \frac{\sqrt[n]{a}}{\sqrt[n]{b}}
+    \end{align*}
+\end{proof}
+
+\begin{theorem}
+    \begin{align*}
+        \forall n \in \mathbb{N}: n \divisible 2 \;\;\; \forall a \ge 0  \;\;\; \forall b > 0 \;\;\; \sqrt[n]{\frac{a}{b}} = \frac{\sqrt[n]{a}}{\sqrt[n]{b}}
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    \hfill
+    \begin{align*}
+        &\text{Пусть } x = \sqrt[n]{a} \land y = \sqrt[n]{b} \text{, тогда}\\
+        &\left\{\begin{array}{l}
+            a \ge 0 \\
+            b > 0 \\
+        \end{array}\right. \implies
+        \left\{\begin{array}{l}
+            x \ge 0 \\
+            y > 0 \\
+        \end{array}\right. \implies
+        \frac{x}{y} \ge 0 \;\;\; (1)
+        \\ \\
+        &\left(\frac{x}{y}\right)^n = \frac{x^n}{y^n} = \frac{a}{b} \overset{(1)}{\iff} \frac{x}{y} = \sqrt[n]{\frac{a}{b}} = \frac{\sqrt[n]{a}}{\sqrt[n]{b}}
+    \end{align*}
+\end{proof}
+
+\begin{theorem}
+    \begin{align*}
+        \forall m,n \in \mathbb{N}: m,n \notdivisible 2 \;\;\; \forall a \in \mathbb{R} \;\;\; \sqrt[n]{\sqrt[m]{a}} = \sqrt[m \cdot n]{a}
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    \hfill
+    \begin{align*}
+        &\text{Пусть } x = \sqrt[n]{\sqrt[m]{a}} \text{, тогда} \\
+        &x^n = \sqrt[m]{a} \iff
+        x^{n \cdot m} = a \iff
+        x = \sqrt[m \cdot n]{a} = \sqrt[n]{\sqrt[m]{a}}
+    \end{align*}
+\end{proof}
+
+\begin{theorem}
+    \begin{align*}
+        \forall m,n \in \mathbb{N}: m,n \divisible 2 \;\;\; \forall a \ge 0 \;\;\; \sqrt[n]{\sqrt[m]{a}} = \sqrt[m \cdot n]{a}
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    \hfill
+    \begin{align*}
+        &\text{Пусть } x = \sqrt[n]{\sqrt[m]{a}} \text{, тогда} \\
+        &\left\{\begin{array}{l}
+            x^n = \sqrt[m]{a} \\
+            x \ge 0 \\
+        \end{array}\right. \underset{a \ge 0}{\iff}
+        x^{n \cdot m} = a \underset{a \ge 0}{\iff}
+        x = \sqrt[m \cdot n]{a} = \sqrt[n]{\sqrt[m]{a}}
+    \end{align*}
+\end{proof}
+
+\begin{theorem}
+    \begin{align*}
+        \forall m,n \in \mathbb{N}: m,n \notdivisible 2 \;\;\; \forall a \in \mathbb{R} \;\;\; \sqrt[n]{a} = \sqrt[n \cdot m]{a^m}
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    \hfill
+    \begin{align*}
+        &\text{Пусть } x = \sqrt[n]{a} \text{, тогда} \\
+        & x^n = a \iff
+        x^{n \cdot m} = a^m \iff
+        x = \sqrt[n \cdot m]{a^m} = \sqrt[n]{a}
+    \end{align*}
+\end{proof}
+
+\begin{theorem}
+    \begin{align*}
+        \forall m,n \in \mathbb{N}: m,n \divisible 2 \;\;\; \forall a \ge 0 \;\;\; \sqrt[n]{a} = \sqrt[n \cdot m]{a^m}
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    \hfill
+    \begin{align*}
+        &\text{Пусть } x = \sqrt[n]{a} \text{, тогда} \\
+        &\left\{\begin{array}{l}
+            x^n = a \\
+            x \ge 0 \\
+        \end{array}\right. \underset{a \ge 0}{\iff}
+        x^{n \cdot m} = a^m \underset{a \ge 0}{\iff}
+        x = \sqrt[n \cdot m]{a^m} = \sqrt[n]{a}
+    \end{align*}
+\end{proof}
+
+\begin{theorem}
+    \begin{align*}
+        \forall n \in \mathbb{N}: n \notdivisible 2 \;\;\; \forall m \in \mathbb{Z}: m \notdivisible 2 \;\;\; \forall a \in \mathbb{R} \backslash \{0\} \;\;\; 
+        \sqrt[n]{a^m} = (\sqrt[n]{a})^m
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    \hfill
+    \begin{align*}
+        &\text{Пусть } x = (\sqrt[n]{a})^m \text{, тогда} \\
+        &x^n = ((\sqrt[n]{a})^m)^n \iff
+        x^n = ((\sqrt[n]{a})^n)^m = a^m \iff
+        x = \sqrt[n]{a^m} = (\sqrt[n]{a})^m
+    \end{align*}
+\end{proof}
+
+\begin{theorem}
+    \begin{align*}
+        \forall n \in \mathbb{N}: n \divisible 2 \;\;\; \forall m \in \mathbb{Z}: m \divisible 2 \;\;\; \forall a > 0 \;\;\; 
+        \sqrt[n]{a^m} = (\sqrt[n]{a})^m
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    \hfill
+    \begin{align*}
+        &\text{Пусть } x = (\sqrt[n]{a})^m \text{, тогда} \\
+        &x^n = ((\sqrt[n]{a})^m)^n \iff
+        x^n = ((\sqrt[n]{a})^n)^m = a^m \overset{m \divisible 2}{\underset{a \neq 0}{\implies}}
+        \left\{\begin{array}{l}
+            x^n = a^m \\
+            x > 0 \\
+        \end{array}\right. \iff
+        x = \sqrt[n]{a^m} = (\sqrt[n]{a})^m
+    \end{align*}
+\end{proof}
+
+\begin{theorem}
+    \begin{align*}
+        \forall n \in \mathbb{N}: n \notdivisible 2 \;\;\; \forall a,b \in \mathbb{R}  \;\;\; a \le b \iff \sqrt[n]{a} \le \sqrt[n]{b}
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    \hfill \\
+
+    Пусть $x = \sqrt[n]{a} \land y = \sqrt[n]{b}$, тогда
+    \begin{enumerate}
+        \item $x = 0 \lor y = 0$ - очевидно
+        \item $sign(x) \neq sign(y)$ - очевидно
+        \item $x > 0 \land y > 0$:
+        \begin{align*}
+            &a-b = x^n - y^n = (x-y)\overbrace{(x^{n-1} + x^{n-2}y + x^{n-3}y^2 + \dots + y^{n-1})}^{> 0, \text{ так как } x \text{ и } y \text{ больше нуля}}
+            \implies sign(a-b) = sign(x-y) \\
+            &\implies sign(a-b) = sign(\sqrt[n]{a} - \sqrt[n]{b}) \\
+        \end{align*}
+        \item $x < 0 \land y < 0$:
+        \begin{align*}
+            &a-b = x^n - y^n = (x-y)\overbrace{(x^{n-1} + x^{n-2}y + x^{n-3}y^2 + \dots + y^{n-1})}^{> 0, \text{ *}}
+            \implies sign(a-b) = sign(x-y) \\
+            &\implies sign(a-b) = sign(\sqrt[n]{a} - \sqrt[n]{b}) \\
+        \end{align*}
+        \text{* в каждом слагаемом все множетили возводятся в степени одинаковой четности.} \\
+        \text{Если степень четная, то такое слагаемое будет положительным, если нечетное то тогда} \\
+        \text{слагаемое будет произведением двух отрицательных чисел и тоже будет положительным.}
+    \end{enumerate}
+\end{proof}
+
+\begin{theorem}
+    \begin{align*}
+        \forall n \in \mathbb{N}: n \divisible 2 \;\;\; \forall a,b \ge 0 \;\;\; a \le b \iff \sqrt[n]{a} \le \sqrt[n]{b}
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    \hfill \\
+
+    Пусть $x = \sqrt[n]{a} \land y = \sqrt[n]{b}$, тогда
+    \begin{enumerate}
+        \item $x = 0 \lor y = 0$ - очевидно
+        \item $x > 0 \land y > 0$:
+        \begin{align*}
+            &a-b = x^n - y^n = (x-y)\overbrace{(x^{n-1} + x^{n-2}y + x^{n-3}y^2 + \dots + y^{n-1})}^{> 0, \text{ так как } x \text{ и } y \text{ больше нуля}}
+            \implies sign(a-b) = sign(x-y) \\
+            &\implies sign(a-b) = sign(\sqrt[n]{a} - \sqrt[n]{b}) \\
+        \end{align*}
+    \end{enumerate}
+\end{proof}

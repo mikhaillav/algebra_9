@@ -1,6 +1,7 @@
 \documentclass[12pt, a4paper]{report}
 
 % Импорты 
+
 \usepackage{cmap}
 \usepackage{url}
 \usepackage{hyperref}
@@ -10,12 +11,15 @@
 \usepackage{graphicx}
 \usepackage{titlesec}
 \usepackage[normalem]{ulem}
+\usepackage{cancel}
+\usepackage{subcaption}
 
 \usepackage[english, russian]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T2A]{fontenc}
 
 % Геометрия 
+
 \usepackage{geometry}
 \geometry{
 	left=1.5cm,
@@ -23,9 +27,11 @@
 	top=2cm,
 	bottom=1.5cm
 }
+
 \setlength\parindent{0pt}
 
 % Теоремы, леммы ...
+
 \renewcommand{\listtheoremname}{Список теорем}
 
 \newtheorem{theorem}{Теорема}[section]
@@ -36,8 +42,11 @@
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Замечание}
 \newtheorem{example}[theorem]{Пример}
+\newcommand{\divisible}{\mathop{\raisebox{-2pt}{\smash{\vdots}}}}
+\newcommand{\notdivisible}{\mathop{\raisebox{-2pt}{$\not \vdots$ }}}
 
 % Колонтитулы
+
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[R]{\rightmark}
@@ -47,6 +56,7 @@
 \renewcommand{\sectionmark}[1]{\markright{#1}}
 
 % Главы
+
 \titleformat{\chapter}[display]
 {\normalfont\huge\bfseries\centering} % Формат текста
 {\titlerule[1pt] \vspace{1pt} \titlerule\vspace{1pc} \Huge\MakeUppercase{\chaptertitlename} \thechapter} % Номер главы
@@ -65,37 +75,33 @@
 		{\Large Санкт-Петербургский губернаторский\\ Физико-математический лицей №30}\\[1cm]
 		\includegraphics[width=0.18\textwidth]{assets/logo.png}\\[5cm]
 		
-		\textbf{ \LARGE Конспект важных уроков N-го класса}\\[2cm]
+		\textbf{ \LARGE Конспект уроков алгебры 9-го класса}\\[2cm]
 		
 		\begin{flushright}
-			\textbf{Ученика:} \\ Идеалова Идеала \\[1cm]
-			\textbf{По мотивам уроков:} \\ Лучшего учителя на свете \\[1cm]
+			\textbf{Ученика:} \\ Лавелина М.Е. \\[1cm]
+			\textbf{По мотивам уроков:} \\ Ренёва О.В. \\[1cm]
 		\end{flushright}
 		
 		\vfill
 		
-		{\large 2023--2024 г.}
+		{\large 2024--2025 г.}
 		
 	\end{titlepage}
 	
 	\begin{abstract}
-	
-		Пример аннотации. 
-		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-		At vero eos et accusam et justo duo dolores et ea rebum. 
-		Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
-		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-		At vero eos et accusam et justo duo dolores et ea rebum. 
-		Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. \\
+		Я пишу для себя так, понятно и удобно мне. Некоторые формулировки могут быть не точными или вовсе не верными. 
+		Думайте прежде всего \textbf{своей} головой. \\
+
 		
 		\begin{center}
-			*Какой-то мотивационный текст*
+		  Удачи в изучении алгебры!
 		\end{center} 
 		
-	\end{abstract}
+	  \end{abstract}
 
 	\include{tex/contents.tex}	
 	\include{tex/chapter_1/chapter_1.tex}
+	\include{tex/chapter_2/chapter_2.tex}
 
 \end{document}
 

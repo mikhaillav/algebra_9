@@ -1,0 +1,110 @@
+\section{Иррациональные неравенства}
+
+\begin{align*}
+    \begin{array}{c}
+        a, b \in A \\
+        f \uparrow A
+    \end{array}
+    \hspace{1.5cm}
+    a \le b \iff f(a) \le f(b) \\ \\
+    \begin{array}{c}
+        a, b \in A \\
+        f \downarrow A
+    \end{array}
+    \hspace{1.5cm}
+    a \le b \iff f(a) \ge f(b) \\
+\end{align*}
+
+\begin{remark}
+    Возведение обоих частей неравенства в нечетную положительную степень всегда является равносильным преобразованием.
+\end{remark}
+
+\begin{remark}
+    Если обе части неравенства неотрицательны, то их можно возводить в четную натуральную степень, но возможно потребуются ограничения по ОДЗ.
+\end{remark}
+
+\begin{example}
+    $\sqrt{x - 2} > 3 \iff x - 2 > 9 \iff x > 11$
+\end{example}
+
+\begin{example}
+    \begin{align*}
+        &\sqrt{x - 2} \le 3 \iff
+        \left\{\begin{array}{l}
+            x - 2 \ge 0 \\
+            x - 2  \le 9
+        \end{array}\right. \iff
+        \left\{\begin{array}{l}
+            x \ge 2 \\
+            x \le 11
+        \end{array}\right. \iff
+        x \in [2; 11]
+    \end{align*}
+\end{example}
+
+\begin{remark}
+    Если обе части неравенства неположительные числа, то неравенство можно возвести в четную натуральную степень, 
+    но знак неравенства поменяется на противположгный
+\end{remark}
+
+\begin{remark}
+    Если обе части неравенства имеют разный знак, то их нельзя возводить в четную натуральную степень, но при этом о выполнении неравенства
+    можно непосредственно судить.
+\end{remark}
+
+\begin{example}
+    \begin{align*}
+        &\sqrt{x - 2} \le -x \iff
+        \left\{\begin{array}{l}
+            x \le 0 \\
+            x - 2 \le x^2 \\
+            x + 2 \ge 0
+        \end{array}\right. \iff
+        \left\{\begin{array}{l}
+            x \in [-2; 0] \\
+            (x + 1)(x - 2) \ge 0
+        \end{array}\right. \iff
+        \left\{\begin{array}{l}
+            x \in [-2; 0] \\
+            x \in (-\infty; -1] \cup [2; +\infty) \ge 0
+        \end{array}\right. \\
+        &\text{Ответ: } [-2; -1]
+    \end{align*}
+\end{example}
+
+\begin{example}
+    \begin{align*}
+        &\sqrt{x - 2} \ge -x \iff
+        \left[
+            \begin{array}{l}
+                \left\{\begin{array}{l}
+                    x > 0 \\
+                    x \ge -2
+                \end{array}\right. \\
+                \left\{\begin{array}{l}
+                    x \le 0 \\
+                    x + 2 \ge x^2
+                \end{array}\right.
+            \end{array}
+        \right. \iff
+        \left[
+            \begin{array}{l}
+                x \ge -2 \\
+                \left\{\begin{array}{l}
+                    x \le 0 \\
+                    (x + 1)(x - 2) \le 0
+                \end{array}\right.
+            \end{array}
+        \right. \iff
+        \left[
+            \begin{array}{l}
+                x \ge -2 \\
+                \left\{\begin{array}{l}
+                    x \le 0 \\
+                    x \in [-1; 2]
+                \end{array}\right.
+            \end{array}
+        \right. \\
+        &\text{Ответ: } [-1; +\infty)
+    \end{align*}
+\end{example}

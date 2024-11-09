@@ -1,0 +1,40 @@
+\section{Арифметический корень натуральной степени}
+
+\begin{definition}[Четная степень]
+    Арифметическим корнем натуральной четной степени $n$ из числа $a$ называется число $b$, если оно при возведении в степень $n$ равно числу $a$
+
+    \[
+        b =  \sqrt[n]{a} \overset{ n \divisible 2}{\underset{n \in \mathbb{N}}{\iff}} 
+        \left\{
+        \begin{array}{l}
+            b \ge 0 \\
+            b^n = a
+        \end{array}\right.
+    \]
+\end{definition}
+
+\begin{definition}[Нечетная степень]
+    Арифметическим корнем натуральной нечетной степени $n$ из числа $a$ называется число $b$, если оно при возведении в степень $n$ равно числу $a$
+
+    \[
+        b =  \sqrt[n]{a} \overset{ n \notdivisible 2}{\underset{n \in \mathbb{N}}{\iff}} b^n = a
+    \]
+\end{definition}
+
+\begin{example}
+    $\sqrt[5]{625} = 4$; $\sqrt[3]{8} = 2$; $\sqrt[4]{-4} \in \varnothing$;
+\end{example}
+
+\label{thm:1.2.2}
+\begin{theorem}[Теорема о корректности определения]
+    \[
+        \forall n \in \mathbb{N}: n \divisible 2 \;\;\; \forall a \ge 0 \;\;\; \exists! \; b \ge 0: b^n = a
+    \]
+\end{theorem}
+
+\label{thm:1.2.3}
+\begin{theorem}[Теорема о корректности определения]
+    \[
+        \forall n \in \mathbb{N}: n \notdivisible 2 \;\;\; \forall a \in \mathbb{R} \;\;\; \exists! \; b \in \mathbb{R}: b^n = a
+    \]
+\end{theorem}

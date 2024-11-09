@@ -1,32 +1,122 @@
-\section{Пример секции}
+\section{Степень с целым показателем}
 
 \begin{definition}
-	Мир, это когда нет войны
+    \[
+        m \in \mathbb{Z}: \; a^m = 
+        \left\{
+        \begin{array}{l}
+            a^m, \; m \in \mathbb{N} \\ \\
+            1, \; m = 0 \\ \\
+            \frac{1}{a^m}, \; m \in  \mathbb{Z} \land n < 0 \\
+        \end{array}\right.
+    \]
 \end{definition}
 
-\begin{corollary}
-	Где война нет мира
-\end{corollary}
-
+\begin{remark}
+    $a^m$, при $m \in \mathbb{Z} \; \backslash \; \mathbb{N}$ не определенно при $a = 0$. Иными словами, ноль нельзя возводить в неположительную степень.
+\end{remark}
 
 \begin{example}
-	Пример примера
+    $2^{-3} = \frac{1}{2^3} = \frac{1}{8}$; $(\frac{3}{2})^{-2} = \frac{2^2}{3^2} = \frac{4}{9}$;
 \end{example}
 
-\begin{theorem}[О крокодиле]
-	Крокодил более желтый, чем широкий
+\begin{theorem}
+    $\forall a \in \mathbb{R} \backslash \{0\} \; \forall m, n \in \mathbb{Z}: \; a^m \cdot a^n = a^{m + n}$
 \end{theorem}
 
 \begin{proof}
-	Взгляните на крокодила, все станет понятно
+    \hfill
+
+    \begin{enumerate}
+        \item $m,n \in \mathbb{N}$ - см. доказательство для $\mathbb{N}$
+        \item $m = 0 \lor n = 0$ - очевидно
+        \item $m < 0 \land n > 0$:
+        \begin{align*}
+            a^m \cdot a^n = \frac{a^n}{a^{-m}} = a^{n - (-m)} = a^{m + n}
+        \end{align*}
+        \item $m > 0 \land n < 0$:
+        \begin{align*}
+            a^m \cdot a^n = \frac{a^m}{a^{-n}} = a^{m - (-n)} = a^{m + n}
+        \end{align*}
+        \item $m < 0 \land n < 0$:
+        \begin{align*}
+            a^m \cdot a^n = \frac{1}{a^{-n} \cdot a^{-m}} = \frac{1}{a^{-(n+m)}} = a^{m + n}
+        \end{align*}
+    \end{enumerate}
 \end{proof}
 
-\begin{remark}
-	Крокодил желтый только снизу, сверху он зеленый
-\end{remark}
+\break
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[height=5cm]{tex/chapter_1/assets/geogebra-export.pdf}
-    \caption{Равносторонний треугольник}
-\end{figure}
+\begin{theorem}
+    $\forall a \in \mathbb{R} \backslash \{0\} \; \forall m, n \in \mathbb{Z}: \; (a^m)^n = a^{m \cdot n}$
+\end{theorem}
+
+\begin{proof}
+    \hfill
+
+    \begin{enumerate}
+        \item $m,n \in \mathbb{N}$ - см. доказательство для $\mathbb{N}$
+        \item $m = 0 \lor n = 0$ - очевидно
+        \item $m < 0 \land n > 0$:
+        \begin{align*}
+            (a^m)^n = \left(\frac{1}{a^{-m}}\right)^n = \frac{1}{a^{-m \cdot n}} = a^{m \cdot n}
+        \end{align*}
+        \item $m > 0 \land n < 0$:
+        \begin{align*}
+            (a^m)^n = \frac{1}{(a^m)^{-n}} = \frac{1}{a^{-m \cdot n}} = a^{m \cdot n}
+        \end{align*}
+        \item $m < 0 \land n < 0$:
+        \begin{align*}
+            (a^m)^n = \frac{1}{(a^m)^{-n}} \stackrel{3.}{=} \frac{1}{a^{-m \cdot n}} = a^{m \cdot n}
+        \end{align*}
+    \end{enumerate}
+\end{proof}
+
+\begin{theorem}
+    $\forall a \in \mathbb{R} \backslash \{0\} \; \forall m, n \in \mathbb{Z}: \; \frac{a^m}{a^n} = a^{m-n}$
+\end{theorem}
+
+\begin{proof}
+    \hfill
+
+    \begin{enumerate}
+        \item $m,n \in \mathbb{N} \land m > n$ - см. доказательство для $\mathbb{N}$
+        \item $m,n \in \mathbb{N} \land m = n$ - очевидно (нулевая степень)
+        \item $m,n \in \mathbb{N} \land m < n$:
+        \begin{align*}
+            \frac{a^m}{a^n} = \frac{1}{(\frac{a^n}{a^m})} = \frac{1}{a^{n - m}} = a^{- (n - m)} = a^{m - n}
+        \end{align*}
+        \item $m = 0 \lor n = 0$ - очевидно
+        \item $m < 0 \land n > 0$:
+        \begin{align*}
+            \frac{a^m}{a^n} = \frac{1}{a^{n} \cdot a^{-m}} = \frac{1}{a^{n - m}} = a^{- (n - m)} = a^{m - n}
+        \end{align*}
+        \item $m > 0 \land n < 0$:
+        \begin{align*}
+            \frac{a^m}{a^n} = \frac{m}{(\frac{1}{a^{-n}})} = a^{m} \cdot a^{-n}= a^{m - n}
+        \end{align*}
+        \item $m < 0 \land n < 0$:
+        \begin{align*}
+            \frac{a^m}{a^n} = \frac{a^{-n}}{a^{-m}} = a^{-n - (-m)} = a^{m - n}
+        \end{align*}
+    \end{enumerate}
+\end{proof}
+
+\break
+
+\begin{theorem}
+    $\forall a, b \in \mathbb{R} \backslash \{0\} \; \forall m \in \mathbb{Z}: \; (ab)^m = a^m \cdot a^n$
+\end{theorem}
+
+\begin{proof}
+    \hfill
+
+    \begin{enumerate}
+        \item $m \in \mathbb{N}$ - см. доказательство для $\mathbb{N}$
+        \item $m = 0$ - очевидно
+        \item $m \in \mathbb{Z} \land m < 0$:
+        \begin{align*}
+            (ab)^m = \frac{1}{(ab)^{-m}} = \frac{1}{a^{-m} \cdot b^{-m}} = a^m \cdot a^n
+        \end{align*}
+    \end{enumerate}
+\end{proof}
