@@ -14,8 +14,8 @@ jobs:
     - name: Install dependencies
       run: sudo apt install -y texlive-latex-extra texlive-lang-cyrillic texlive-fonts-recommended make
 
-    - name: Make build.sh executable
-      run: chmod +x build.sh
+    - name: Make sh files executable
+      run: chmod +x build.sh copy_dir_structure.sh
 
     - name: Build
       run: make && make # Latex needs at least 2 compilations to display TOC correctly.
