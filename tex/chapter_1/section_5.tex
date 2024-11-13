@@ -1,0 +1,45 @@
+\section{Свойства степени с рациональным показателем}
+
+\begin{theorem}
+    \begin{align*}
+        &\forall a > 0 \;\; \forall r, q \in \mathbb{Q} \\
+        &a^r \cdot a^q = a^{r + q}
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    \begin{align*}
+        &r, q \in \mathbb{Q} \iff
+        \left\{\begin{array}{l}
+            m,s \in \mathbb{Z} \\
+            n,t \in \mathbb{N} \\
+            r = \frac{m}{n} \\
+            q = \frac{s}{t}
+        \end{array}\right. \Rightarrow
+        a^r \cdot a^q = a^\frac{m}{n} \cdot a^\frac{s}{t} = \sqrt[n]{a^m} \cdot \sqrt[t]{a^s} = \sqrt[nt]{a^{mt}} \cdot \sqrt[nt]{a^{sn}} = \\
+        &= \sqrt[nt]{a^{mt} \cdot a^{sn}} = \sqrt[nt]{a^{mt + sn}}
+        = a^\frac{mt + sn}{nt} = a^{\frac{m}{m} + \frac{s}{t}} = a^{r + q}
+    \end{align*}
+\end{proof}
+
+\begin{theorem}
+    \begin{align*}
+        &\forall a > 0 \;\; \forall r, q \in \mathbb{Q} \\
+        &a^r : a^q = a^{r - q}
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    \begin{align*}
+        &r, q \in \mathbb{Q} \iff
+        \left\{\begin{array}{l}
+            m,s \in \mathbb{Z} \\
+            n,t \in \mathbb{N} \\
+            r = \frac{m}{n} \\
+            q = \frac{s}{t}
+        \end{array}\right. \Rightarrow
+        a^r : a^q = \frac{a^\frac{m}{n}}{a^\frac{s}{t}} = \frac{\sqrt[n]{a^m}}{\sqrt[t]{a^s}} = \frac{\sqrt[nt]{a^{mt}}}{\sqrt[nt]{a^{sn}}}
+        = \sqrt[nt]{\frac{a^{mt}}{a^{sn}}} = \sqrt[nt]{a^{mt - sn}} = a^\frac{mt - sn}{nt} = \\
+        &= a^{\frac{m}{n} + \frac{s}{t}} = a^{r - q}
+    \end{align*}
+\end{proof}
