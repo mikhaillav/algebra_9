@@ -1,113 +1,106 @@
-\section{Иррациональные уравнения}
+\section{Обратная функция}
 
-\begin{align*}
-    a = b &\iff f(a) = f(b) \\
-    &\Rightarrow - \text{ верно всегда}\\
-    &\Leftarrow - \text{ верно, если функция инъективна}
-\end{align*}
+\begin{remind}
+    $f: A \rightarrow B$ иньекция, если $\forall x_1, x_2 \in A \;\; x_1 \neq x_2 \iff f(x_1) \neq f(x_2)$
+\end{remind}
 
-\begin{definition}[Инъективность]
-    Функция называется инъективной на множестве $A$ (инъекция на множестве $A$), если различным значениям аргумента из множества $A$, 
-    функция сопостовляет различные значения функции.
+\begin{definition}[Сюръекция]
+    $f: A \rightarrow B$ сюръекция, если $\forall y \in B \; \exists x \in A \; : \; y = f(x)$
+\end{definition}
 
+\begin{definition}[Биекция]
+    $f: A \rightarrow B$ биекция, если она и иньекция и сюръекция одновременно.
+\end{definition}
+
+\begin{remark}
+    Биекцию так же называют \textbf{взаимно однозначным соответствием}.
+\end{remark}
+
+\begin{definition}[Обратная функция]
+    Функция $g: B \rightarrow A$ называется обратной к $f: A \rightarrow B$
+    если выполняется условие:
     \begin{align*}
-        &A \subset D(f) \\
-        &\forall x_1, x_2 \in A \;\;\; x_1 \neq x_2 \Rightarrow f(x_1) \neq f(x_2)
+        \left\{\begin{array}{l}
+            \forall x \in A \;\;\; g(f(x)) = x \\
+            \forall y \in B \;\;\; f(g(y)) = y
+        \end{array}\right.
     \end{align*}
 \end{definition}
 
 \begin{remark}
-    На основании теоремы "док-во от обратного":
+    $f: A \rightarrow B$ обратима тогда и только тогда когда биекция.
+\end{remark}
+
+\begin{example}
+    $y=x$ обратная сама к себе
+\end{example}
+
+\begin{example}
+    $y=2x + 1 \iff x = \frac{y - 1}{2}$ Тогда обратная функция к функции $f(x) = 2x + 1$ будет функция $g(x) = \frac{y - 1}{2}$
+\end{example}
+
+\begin{example}
+    $f(x) = x^2 - 2x + 3$, при $A = \left(-\infty; 1\right]$
     \begin{align*}
-        &(x_1 \neq x_2 \Rightarrow f(x_1) \neq f(x_2)) \iff (f(x_1) = f(x_2) \Rightarrow x_1 = x_2)
+        y = x^2 - 2x + 3 \iff x = 1 \pm \sqrt{y - 2} \overset{x \in A}{\iff} x = 1 - \sqrt{y - 2}
     \end{align*}
-\end{remark}
+    Тогда $g(x) = 1 - \sqrt{y - 2}$ обартная к $f$ на множестве $A$
+\end{example}
 
-\hfill \newline
+\begin{definition}
+    Функция, обратная к функции $f(x)$ обозначается как $f(x)^{-1}$ 
+\end{definition}
 
-\begin{remark}
-    График инъективной функции пересекается произвольной горизонтальной прямой не больше одного раза.
-\end{remark}
-
-\begin{theorem}[Достаточное условие инъективности]
-    Если функция строго монотонна на множестве $A$, то она инъективна на множестве $A$.
+\begin{theorem}[О графике обратной функции]
+    Графики прямой и обартной функции симметричны относительно прямой $y = x$.
 \end{theorem}
 
 \begin{proof}
     \begin{align*}
-        &\text{Функция строго монотонна, значит } \\
-        &\left[\begin{array}{l}
-            x < y \iff f(x) < f(y) \\
-            x > y \iff f(x) > f(y) 
+        &\forall (x; y) \; \forall f: A \rightarrow B, \; g: B \rightarrow A \;\;\; (x; y) \in \Gamma_f \iff \\
+        &\iff  \left\{\begin{array}{l}
+            x \in D(f) \\
+            y = f(x)
+        \end{array}\right. \iff
+        \left\{\begin{array}{l}
+            y \in D(g) \\
+            g(y) = x 
+        \end{array}\right. \iff
+        (x; y) \in \Gamma_g
+    \end{align*}
+
+    Если $y = f(x)$ то $y \in D(g)$, ведь функция $f(x)$ как бы <<возвращает>> множество $B$ которое для функции $g$ является областью определения. \\
+    А зная, что $g(x) = f(x)^{-1}$ мы можем применить функцию к обоим частям уравнения и получим в правой части <<чистый аргумент>> без функции.
+\end{proof}
+
+\break
+
+\begin{theorem}[О монотонности обратной функции]
+    \begin{align*}
+        &\text{Если } f: A \rightarrow B, \; g: B \rightarrow A \land g(x) = f(x)^{-1} \text{ то} \\
+        &\left\{\begin{array}{l}
+            f \uparrow A \Rightarrow g \uparrow B \\
+            f \downarrow A \Rightarrow g \downarrow B
+        \end{array}\right.
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    \begin{align*}
+        1) & \; \forall x_1, x_2 \in A \;\; x_1 > x_2 \Rightarrow f(x_1) > f(x_2)  \\
+        &\text{Предположим, } \exists y_1, y_2 \in B \;\; y_1 > y_2 \land g(x_1) \le g(x_2) \\
+        &\left\{\begin{array}{l}
+            g(y_1) = x_1 \\
+            g(y_2) = x_2
         \end{array}\right. \Rightarrow
-        (x \neq y \iff f(x) \neq f(y))
+        x_1 \le x_2 \Rightarrow f(x_1) \le f(x_2) \; ?! \\ \\
+        2) & \; \forall x_1, x_2 \in A \;\; x_1 > x_2 \Rightarrow f(x_1) < f(x_2)  \\
+        &\text{Предположим, } \exists y_1, y_2 \in B \;\; y_1 > y_2 \land g(x_1) \ge g(x_2) \\
+        &\left\{\begin{array}{l}
+            g(y_1) = x_1 \\
+            g(y_2) = x_2
+        \end{array}\right. \Rightarrow
+        x_1 \ge x_2 \Rightarrow f(x_1) \ge f(x_2) \; ?!
     \end{align*}
 \end{proof}
 
-\begin{remark}
-    Обратное неверно!
-\end{remark}
-
-\begin{remark}
-    Степенная функция с нечетным натуральным показателем -- инъекция на всей вещестенной оси, так как всегда возрастает. 
-\end{remark}
-
-\begin{remark}
-    Возведение обоих частей уравнения в нечетную натуральную степень всегда будет равносильным преобразованием.
-\end{remark}
-
-\begin{remark}
-    Степенная функция с четным натуральным показателем не является инъекцией на всей вещестенной оси. 
-\end{remark}
-
-\begin{example}
-    \begin{align*}
-        \text{Если } f(x) = x^4; \; x_1 = 2; \; x_2 = -2, \text{ то } x_1 \neq x_2, \text{ но } f(x_1) = f(x_2) = 16
-    \end{align*}
-\end{example}
-
-\begin{remark}
-    Степенная функция с четным натуральным показателем является инъекцией отдельно на множестве $(-\infty; \; 0]$ и $[0; \; +\infty )$ 
-\end{remark}
-
-\begin{remark}
-    При возведении обоих частей уравнения в четную натуральную степень могут появится лишние решения.
-\end{remark}
-
-\begin{example}
-    \begin{align*}
-        &\sqrt{x + 2} = x \iff x + 2 = x^2 \iff x^2 - x - 2 = 0 \iff \\
-        &\left[\begin{array}{l}
-            \uwave{x = -1} \leftarrow \text{лишний корень}\\
-            x = 2
-        \end{array}\right.
-    \end{align*}
-\end{example}
-
-\begin{remark}
-    Если можем гарантировать, что обе части уравнения имеют одинаковый знак, то возведение их в четную натуральную степень
-    будет равносильным преобразованием.
-\end{remark}
-
-\begin{example}
-    \begin{align*}
-        &\sqrt{x + 2} = x \underset{x \ge 0}{\iff} x + 2 = x^2 \iff x^2 - x - 2 = 0 \iff \\
-        &\left[\begin{array}{l}
-            x = -1 \\
-            x = 2
-        \end{array}\right. \underset{x \ge 0}{\iff}
-        x = 2
-    \end{align*}
-\end{example}
-
-\begin{example}
-    \begin{align*}
-        &\sqrt{2x + 7} - \sqrt{x + 3} = 1 \iff \sqrt{2x + 7} = \sqrt{x + 3} + 1 \iff \\
-        &2x + 7 = 1 + 2\sqrt{x + 3} + x + 3 \iff 2\sqrt{x + 3} = x + 3 \iff\\
-        &4x + 12 = x^2 + 6x + 9 \iff x^2 - 2x - 3 = 0 \iff
-        \left[\begin{array}{l}
-            x = 1 \\
-            x = -3
-        \end{array}\right.
-    \end{align*}
-\end{example}

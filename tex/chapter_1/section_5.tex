@@ -40,6 +40,67 @@
         \end{array}\right. \Rightarrow
         a^r : a^q = \frac{a^\frac{m}{n}}{a^\frac{s}{t}} = \frac{\sqrt[n]{a^m}}{\sqrt[t]{a^s}} = \frac{\sqrt[nt]{a^{mt}}}{\sqrt[nt]{a^{sn}}}
         = \sqrt[nt]{\frac{a^{mt}}{a^{sn}}} = \sqrt[nt]{a^{mt - sn}} = a^\frac{mt - sn}{nt} = \\
-        &= a^{\frac{m}{n} + \frac{s}{t}} = a^{r - q}
+        &= a^{\frac{m}{n} - \frac{s}{t}} = a^{r - q}
+    \end{align*}
+\end{proof}
+
+\begin{theorem}
+    \begin{align*}
+        &\forall a > 0 \;\; \forall r, q \in \mathbb{Q} \\
+        &(a^r)^q = a^{rq}
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    \begin{align*}
+        &r, q \in \mathbb{Q} \iff
+        \left\{\begin{array}{l}
+            m,s \in \mathbb{Z} \\
+            n,t \in \mathbb{N} \\
+            r = \frac{m}{n} \\
+            q = \frac{s}{t}
+        \end{array}\right. \Rightarrow
+        (a^r)^q = (a^\frac{m}{n})^\frac{s}{t} = \sqrt[t]{\sqrt[n]{a^m}^s} = \sqrt[nt]{a^{ms}} = a^{\frac{ms}{nt}}
+        = a^{\frac{m}{n} \cdot \frac{s}{t}} = a^{rq}
+    \end{align*}
+\end{proof}
+
+\begin{theorem}
+    \begin{align*}
+        &\forall a, b > 0 \;\; \forall r \in \mathbb{Q} \\
+        &a^r \cdot b^r = (a \cdot b)^r
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    \begin{align*}
+        &r, q \in \mathbb{Q} \iff
+        \left\{\begin{array}{l}
+            m \in \mathbb{Z} \\
+            n \in \mathbb{N} \\
+            r = \frac{m}{n} \\
+        \end{array}\right. \Rightarrow
+        a^r \cdot b^r = a^\frac{m}{n} \cdot b^\frac{m}{n} = \sqrt[n]{a^m} \cdot \sqrt[n]{b^m} = \sqrt[n]{(a \cdot b)^m} = (ab)^\frac{m}{n}
+        = (a \cdot b)^r
+    \end{align*}
+\end{proof}
+
+\begin{theorem}
+    \begin{align*}
+        &\forall a, b > 0 \;\; \forall r \in \mathbb{Q} \\
+        &\frac{a^r}{b^r}  = \left(\frac{a}{b}\right)^r
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    \begin{align*}
+        &r, q \in \mathbb{Q} \iff
+        \left\{\begin{array}{l}
+            m \in \mathbb{Z} \\
+            n \in \mathbb{N} \\
+            r = \frac{m}{n} \\
+        \end{array}\right. \Rightarrow
+        \frac{a^r}{b^r} =  \frac{a^\frac{m}{n}}{b^\frac{m}{n}} = \frac{\sqrt[n]{a^m}}{\sqrt[n]{b^m}} = \sqrt[n]{\left(\frac{a}{b}\right)^m}
+        =\left(\frac{a}{b}\right)^\frac{m}{n} = \frac{a}{b}^r
     \end{align*}
 \end{proof}

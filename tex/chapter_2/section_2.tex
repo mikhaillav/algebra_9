@@ -1,110 +1,242 @@
-\section{Иррациональные неравенства}
+\section{Свойства и графики степенной функции}
 
-\begin{align*}
-    \begin{array}{c}
-        a, b \in A \\
-        f \uparrow A
-    \end{array}
-    \hspace{1.5cm}
-    a \le b \iff f(a) \le f(b) \\ \\
-    \begin{array}{c}
-        a, b \in A \\
-        f \downarrow A
-    \end{array}
-    \hspace{1.5cm}
-    a \le b \iff f(a) \ge f(b) \\
-\end{align*}
+\begin{definition}
+    Степенная функция -- функция вида $f(x) = x^n$
+\end{definition}
 
-\begin{remark}
-    Возведение обоих частей неравенства в нечетную положительную степень всегда является равносильным преобразованием.
-\end{remark}
+\subsection{Натуральная нечетная степень}
 
-\begin{remark}
-    Если обе части неравенства неотрицательны, то их можно возводить в четную натуральную степень, но возможно потребуются ограничения по ОДЗ.
-\end{remark}
+$f(x) = x^n, \; n \in \mathbb{N}  \land n \notdivisible 2$
 
-\begin{example}
-    $\sqrt{x - 2} > 3 \iff x - 2 > 9 \iff x > 11$
-\end{example}
-
-\begin{example}
+\begin{itemize}
+    \item $D(f) = \mathbb{R}$
+    можем подставить любое число
+    \item $E(f) = \mathbb{R}$
+    согласно теореме \hyperref[thm:1.2.3]{о корректности определения}
+    \item $f \uparrow \mathbb{R}$\\
     \begin{align*}
-        &\sqrt{x - 2} \le 3 \iff
-        \left\{\begin{array}{l}
-            x - 2 \ge 0 \\
-            x - 2  \le 9
-        \end{array}\right. \iff
-        \left\{\begin{array}{l}
-            x \ge 2 \\
-            x \le 11
-        \end{array}\right. \iff
-        x \in [2; 11]
+        &\forall x_1, x_2 : x_1 > x_2 \\
+        &f(x_1) - f(x_2) = x_1^n - x_2^n = \underbrace{(x_1 - x_2)}_{> 0} \underbrace{(x_1^{n-1} + x_1^{n-2}x_2 + x_1^{n-3}x_2^2 \; \dots \; x_1x_2^{n-2} + x_2^{n-1})}_{> 0 \text{ см. ниже}} \\
     \end{align*}
-\end{example}
+    1. $x_1 > x_2 \ge 0$ - очевидно \\
+    2. $x_1 > 0 > x_2$ - очевидно, $x_1^n - x_2^n > 0$ \\
+    3. $0 \ge x_1 > x_2$ - см. четность степеней \\ \\
+    Тогда
+    \begin{align*}
+        f(x_1) - f(x_2) > 0 \Rightarrow f(x_1) > f(x_2)
+    \end{align*}
+\end{itemize}
 
 \begin{remark}
-    Если обе части неравенства неположительные числа, то неравенство можно возвести в четную натуральную степень, 
-    но знак неравенства поменяется на противположгный
+    С ростом $n$ график стремится к <<качерге>>, круто падая до $-1$ и круто растя после $1$
+\end{remark}
+
+\newpage
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.35\textwidth}
+        \includegraphics[width=\textwidth]{tex/chapter_2/assets/y=x^3.pdf}
+        \caption*{$f(x) = x^3$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.35\textwidth}
+        \includegraphics[width=\textwidth]{tex/chapter_2/assets/y=x^239.pdf}
+        \caption*{$f(x) = x^{239}$}
+    \end{subfigure}
+\end{figure}
+
+
+\subsection{Натуральная четная степень}
+
+$f(x) = x^n, \; n \in \mathbb{N}  \land n \divisible 2$
+
+\begin{itemize}
+    \item $D(f) = \mathbb{R}$
+    можем подставить любое число
+    \item $E(f) = [0;+\infty)$
+    согласно теореме \hyperref[thm:1.2.2]{о корректности определения}
+    \item $f \uparrow [0;+\infty) \land f \downarrow (-\infty; 0]$
+    \begin{align*}
+        &\forall x_1, x_2 : x_1 > x_2 \\
+        &f(x_1) - f(x_2) = x_1^n - x_2^n = \underbrace{(x_1 - x_2)}_{> 0} \underbrace{(x_1^{n-1} + x_1^{n-2}x_2 + x_1^{n-3}x_2^2 \; \dots \; x_1x_2^{n-2} + x_2^{n-1})}_{(*)} \\
+    \end{align*}
+    1. $x_1 > x_2 \ge 0 \Rightarrow (*) > 0$ - очевидно \\
+    2. $ 0 \ge x_1 > x_2 \Rightarrow (*) < 0$ - см. четность степеней \\ \\
+    Тогда
+    \begin{align*}
+        &\forall x_1, x_2 \in [0; +\infty) \land x_1 > x_2 \\
+        &f(x_1) - f(x_2) > 0 \Rightarrow f(x_1) > f(x_2) \Rightarrow f \uparrow [0; +\infty) \\ \\
+        &\forall x_1, x_2 \in (-\infty; 0] \land x_1 > x_2 \\
+        &f(x_1) - f(x_2) < 0 \Rightarrow f(x_1) < f(x_2) \Rightarrow f \downarrow (-\infty; 0]
+    \end{align*}
+\end{itemize}
+
+\begin{remark}
+    При росте $n$ график будет стремится к перевернутой букве <<п>>
+\end{remark}
+
+\newpage
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.35\textwidth}
+        \includegraphics[width=\textwidth]{tex/chapter_2/assets/y=x^4.pdf}
+        \caption*{$f(x) = x^4$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.35\textwidth}
+        \includegraphics[width=\textwidth]{tex/chapter_2/assets/y=x^300.pdf}
+        \caption*{$f(x) = x^{300}$}
+    \end{subfigure}
+\end{figure}
+
+\subsection{Привет, это Гипербола}
+
+$f(x) = x^m, \; m \in \mathbb{Z} \land m < 0 \land m \notdivisible 2 \iff f(x) = \frac{1}{x^n}, \; n = -m \land n \in \mathbb{N} \land n \notdivisible 2$ \\
+
+\begin{itemize}
+    \item $D(f) = \mathbb{R} \backslash \{0\}$
+    на ноль делить нельзя
+    \item $E(f) = \mathbb{R} \backslash \{0\}$
+    уравнение $y = \frac{1}{x^n}$ имеет решения только при $x \neq 0$ 
+    \item $f \downarrow (-\infty; 0) \land f \downarrow (0; +\infty)$
+    \begin{align*}
+        &\forall x_1, x_2 \in \mathbb{R} \backslash \{0\}: x_1 > x_2 \\
+        &f(x_1) - f(x_2) = \frac{1}{x_1^n} - \frac{1}{x_2^n} = \frac{x_2^n - x_1^n}{x_1^n x_2^n}\\
+    \end{align*}
+    Тогда
+    \begin{align*}
+        &\forall x_1, x_2 \in (0; +\infty) \land x_1 > x_2 \\
+        &f(x_1) < f(x_2) \Rightarrow f \downarrow (0; +\infty) \\ \\
+        &\forall x_1, x_2 \in (-\infty; 0) \land x_1 > x_2 \\
+        &f(x_1) < f(x_2) \Rightarrow f \downarrow (-\infty; 0) \\ \\
+    \end{align*}
+\end{itemize}
+
+\begin{remark}
+    Неверно, что $f \downarrow (-\infty; 0) \cup (0; +\infty)$
 \end{remark}
 
 \begin{remark}
-    Если обе части неравенства имеют разный знак, то их нельзя возводить в четную натуральную степень, но при этом о выполнении неравенства
-    можно непосредственно судить.
+    С ростом $n$ (и, соотвеетственно с уменьшением $m$) график будет стремится к двум кочергам в первой и третьей четверти плоскости.
 \end{remark}
 
-\begin{example}
-    \begin{align*}
-        &\sqrt{x - 2} \le -x \iff
-        \left\{\begin{array}{l}
-            x \le 0 \\
-            x - 2 \le x^2 \\
-            x + 2 \ge 0
-        \end{array}\right. \iff
-        \left\{\begin{array}{l}
-            x \in [-2; 0] \\
-            (x + 1)(x - 2) \ge 0
-        \end{array}\right. \iff
-        \left\{\begin{array}{l}
-            x \in [-2; 0] \\
-            x \in (-\infty; -1] \cup [2; +\infty) \ge 0
-        \end{array}\right. \\
-        &\text{Ответ: } [-2; -1]
-    \end{align*}
-\end{example}
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.35\textwidth}
+        \includegraphics[width=\textwidth]{tex/chapter_2/assets/y=1_div_by_x.pdf}
+        \caption*{Гипербола, $f(x) = \frac{1}{x}$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.35\textwidth}
+        \includegraphics[width=\textwidth]{tex/chapter_2/assets/y=1_div_by_x^99.pdf}
+        \caption*{$f(x) = \frac{1}{x^{99}}$, не гипербола}
+    \end{subfigure}
+\end{figure}
 
-\begin{example}
+\begin{remark}
+    Гиперболой называется график функции $f(x) = \frac{1}{x}$. Другие графики функций вида $f(x) = \frac{1}{x^n}$ не являются гиперболой.
+\end{remark}
+
+\subsection{Четная целая отрицательная степень}
+
+$f(x) = x^m, \; m \in \mathbb{Z} \land m < 0 \land m \divisible 2 \iff f(x) = \frac{1}{x^n}, \; n = -m \land n \in \mathbb{N} \land n \divisible 2$ \\
+
+\begin{itemize}
+    \item $D(f) = \mathbb{R} \backslash \{0\}$
+    \item $E(f) = (0; +\infty)$ уравнение $y = \frac{1}{x^n}$ имеет решения при $y > 0$ тогда $x = \sqrt[n]{\frac{1}{y}}$
+    \item $f \uparrow (-\infty; 0) \land f \downarrow (0; +\infty)$
     \begin{align*}
-        &\sqrt{x - 2} \ge -x \iff
-        \left[
-            \begin{array}{l}
-                \left\{\begin{array}{l}
-                    x > 0 \\
-                    x \ge -2
-                \end{array}\right. \\
-                \left\{\begin{array}{l}
-                    x \le 0 \\
-                    x + 2 \ge x^2
-                \end{array}\right.
-            \end{array}
-        \right. \iff
-        \left[
-            \begin{array}{l}
-                x \ge -2 \\
-                \left\{\begin{array}{l}
-                    x \le 0 \\
-                    (x + 1)(x - 2) \le 0
-                \end{array}\right.
-            \end{array}
-        \right. \iff
-        \left[
-            \begin{array}{l}
-                x \ge -2 \\
-                \left\{\begin{array}{l}
-                    x \le 0 \\
-                    x \in [-1; 2]
-                \end{array}\right.
-            \end{array}
-        \right. \\
-        &\text{Ответ: } [-1; +\infty)
+        &\forall x_1, x_2 \in \mathbb{R} \backslash \{0\}: x_1 > x_2 \\
+        &f(x_1) - f(x_2) = \frac{1}{x_1^n} - \frac{1}{x_2^n} = \frac{x_2^n - x_1^n}{x_1^n x_2^n}\\
     \end{align*}
-\end{example}
+    Тогда
+    \begin{align*}
+        &\forall x_1, x_2 \in (0; +\infty) \land x_1 > x_2 \\
+        & f(x_1) - f(x_2) < 0 \iff f(x_1) < f(x_2) \Rightarrow f \downarrow (0; +\infty) \\ \\
+        &\forall x_1, x_2 \in (-\infty; 0) \land x_1 > x_2 \\
+        & f(x_1) - f(x_2) > 0 \iff f(x_1) > f(x_2) \Rightarrow f \uparrow (-\infty; 0)
+    \end{align*}
+\end{itemize}
+
+\break
+
+\begin{remark}
+    С ростом $n$ (и, соотвеетственно с уменьшением $m$) график будет стремится к двум кочергам в первой и четвертой четверти плоскости.
+\end{remark}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.35\textwidth}
+        \includegraphics[width=\textwidth]{tex/chapter_2/assets/y=1_div_by_x^2.pdf}
+        \caption*{$f(x) = \frac{1}{x^2}$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.35\textwidth}
+        \includegraphics[width=\textwidth]{tex/chapter_2/assets/y=1_div_by_x^64.pdf}
+        \caption*{$f(x) = \frac{1}{x^{64}}$}
+    \end{subfigure}
+\end{figure}
+
+\subsection{Корень нечетной степени}
+
+$f(x) = \sqrt[n]{x}, \; n \in \mathbb{N} \land n \notdivisible 2$
+
+\begin{remark}
+    $f(x)^{-1} = x^n$
+\end{remark}
+
+\begin{itemize}
+    \item $D(f) = \mathbb{R}$
+    \item $E(f) = \mathbb{R}$
+    \item $f \uparrow \mathbb{R}$
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.35\textwidth}
+        \includegraphics[width=\textwidth]{tex/chapter_2/assets/y=x^(1_div_by_3).pdf}
+        \caption*{$f(x) = \sqrt[3]{x}$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=\textwidth]{tex/chapter_2/assets/y=x^(1_div_by_239).pdf}
+        \caption*{$f(x) = \sqrt[239]{x}$}
+    \end{subfigure}
+\end{figure}
+
+\begin{remark}
+    С ростом $n$ график будет стремится к кочерге.
+\end{remark}
+
+\subsection{Корень четной степени}
+
+$f(x) = \sqrt[n]{x}, \; n \in \mathbb{N} \land n \divisible 2$
+
+\begin{remark}
+    $f(x)^{-1} = x^n$ на множестве $[0; +\infty)$
+\end{remark}
+
+\begin{itemize}
+    \item $D(f) = [0; +\infty)$
+    \item $E(f) = [0; +\infty)$
+    \item $f \uparrow [0; +\infty)$
+\end{itemize}
+
+\begin{remark}
+    С ростом $n$ график будет стремится к кочерге.
+\end{remark}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.35\textwidth}
+        \includegraphics[width=\textwidth]{tex/chapter_2/assets/y=x^(1_div_by_2).pdf}
+        \caption*{$f(x) = \sqrt[2]{x}$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=\textwidth]{tex/chapter_2/assets/y=x^(1_div_by_64).pdf}
+        \caption*{$f(x) = \sqrt[64]{x}$}
+    \end{subfigure}
+\end{figure}
